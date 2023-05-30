@@ -1,0 +1,26 @@
+ex1.1 -> 
+    Foi necessario substituir o campo id por _id
+    Foi necessario remover espaços em branco nas keys dos dicionarios json trocando para _
+    Para isto utilizei o script incluido addIds.py que executando da forma:
+        python addIds.py plantas.json Id
+    Faz o pretendido colocando o dataset limpo no ficheiro output.json
+    Para colocar o dataset no mongodb usei o mongoimport rodando o comando:
+        mongoimport --db plantas --collection plantas --file output.json --jsonArray
+
+ex1.2
+1 db.plantas.countDocuments({})
+2 db.plantas.countDocuments({"Freguesia":"São Domingos de Rana"})
+3 db.plantas.aggregate([{"$group": {"_id": "$Freguesia"}},{"$sort": {"_id": 1}}])
+4 db.plantas.aggregate([{$group: { _id:"$Freguesia", count: { $sum: 1 }}}])
+5 db.plantas.aggregate([{$group: { _id:"$Espécie", count: { $sum: 1 }}}])
+
+ex1.3
+A api foi feita em express.js e para a por a rodar basta fazer: 
+    node server.js
+
+Os testes foram feitos no postman e é incluido um ficheiro com a coleção de testes (Testes.postman_collection.json)
+
+ex2
+A inteface foi feita em express.js e pug com w3css para a por a rodar basta fazer: 
+    node server.js
+Os metadados incluidos na pagina principal foi o numero de registos,freguesia e especies.

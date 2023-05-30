@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "9a5296d2-9310-4f24-8c9f-904fca4bb800",
+		"name": "Testes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21277449"
+	},
+	"item": [
+		{
+			"name": "devolve uma lista com todos os registos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15030/plantas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "devolve o registo com identificador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15030/plantas/20615599",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas",
+						"20615599"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "devolve a lista dos registos correspondentes à espécie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15030/plantas?especie=bordo negundo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas"
+					],
+					"query": [
+						{
+							"key": "especie",
+							"value": "bordo negundo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "devolve a lista dos registos com implantação",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15030/plantas?implant=Arruamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas"
+					],
+					"query": [
+						{
+							"key": "implant",
+							"value": "Arruamento"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "devolve a lista de freguesias ordenada alfabeticamente e sem repetições",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15030/plantas/freguesias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas",
+						"freguesias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "devolve a lista das espécies vegetais ordenada alfabeticamente e sem repetições;",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15030/plantas/especies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas",
+						"especies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acrescenta um registo novo à BD;",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Número de Registo\": 3,\n   \"Código_de_rua\": 1685467,\n   \"Rua\": \"Rua Júlio Dinis\",\n   \"Local\": \"Zambujeiro\",\n   \"Freguesia\": \"Alcabideche\",\n   \"Espécie\": \"pinheiro manso\",\n   \"Nome_Científico\": \"Pinus pinea\",\n   \"Origem\": \"\",\n   \"Data_de_Plantação\": \"\",\n   \"Estado\": \"Adulto\",\n   \"Caldeira\": \"Sim\",\n   \"Tutor\": \"Sim\",\n   \"Implantação\": \"Arruamento\",\n   \"Gestor\": \"DGEV\",\n   \"Data_de_actualização\": \"23/07/2021 19:50:54\",\n   \"Número_de_intervenções\": 6\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:15030/plantas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "elimina da BD o registo com o identificador id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15030/plantas/52270501",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15030",
+					"path": [
+						"plantas",
+						"52270501"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
