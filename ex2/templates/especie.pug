@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Especie
+    script(src="/jquery.min.js")
+    link(rel="stylesheet", href="/w3.css")
+  body
+    a(href="javascript:history.back()") Back
+    .w3-container.w3-teal
+      h2="Especie:"+especie
+      h2="Nome cientifico:"+nomeCientifico
+    h1 Plantas
+    table(class="w3-table-all w3-centered w3-hoverable" style="width:100%")
+      thead
+        tr
+          th _id
+          th Freguesia 
+          th Espécie
+          th Estado
+          th Número de intervenções
+      tbody
+        each planta in plantas
+          tr
+            td
+              a(href="/"+planta._id)=planta._id
+            td= planta.Freguesia
+            td= planta.Espécie
+            td= planta.Estado
+            td= planta.Número_de_intervenções

@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Index
+    script(src="/jquery.min.js")
+    link(rel="stylesheet", href="/w3.css")
+    meta(name="Nº Plantas", content=plantas.length)
+    meta(name="Nº Freguesias", content=freguesias.length)
+    meta(name="Nº Especies", content=especies.length)
+  body
+    .w3-container.w3-teal
+      h2="Nº Plantas:"+plantas.length
+      h2="Nº Freguesias:"+freguesias.length
+      h2="Nº Especies:"+especies.length
+    h1 Index
+    table(class="w3-table-all w3-centered w3-hoverable" style="width:100%")
+      thead
+        tr
+          th _id
+          th Freguesia 
+          th Espécie
+          th Estado
+          th Número de intervenções
+      tbody
+        each planta in plantas
+          tr
+            td
+              a(href="/"+planta._id)=planta._id
+            td= planta.Freguesia
+            td
+              a(href="/especies/"+planta.Espécie)=planta.Espécie
+            td= planta.Estado
+            td= planta.Número_de_intervenções
